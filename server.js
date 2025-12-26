@@ -2,6 +2,7 @@ console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
 const http = require("http")
+const fs = require("fs")
 // 1 Kirish Code lari
 app.use(express.static("public"))// har qanday clientlardan kelayotgan so'rovlarga
 // public folder ochiqligini bildiradi
@@ -22,11 +23,15 @@ app.set("view engine", "ejs");
 //4 Routing Codes
 app.post("/create-item", (req, res) => {
     console.log(req.body);
-    res.json({test:"success"})
+    res.json({ test: "success"})
+});
+app.get('/author', (req, res) => {
+    res.render("author", );
 })
-app.get('/', function(req ,res){
+app.get("/", function (req ,res) {
     res.render('harid')
 });
+
  const server = http.createServer(app);
  let PORT = 3000;
  server.listen( PORT, function() {
