@@ -3,6 +3,16 @@ const express = require("express");
 const app = express();
 const http = require("http")
 const fs = require("fs")
+
+
+let user;
+fs.readFile("database/user.json","utf-8", (err, data) => {
+    if(err) {
+        console.log("ERROR:", err)
+    } else {
+        user = JSON.parse(data)
+    }
+})
 // 1 Kirish Code lari
 app.use(express.static("public"))// har qanday clientlardan kelayotgan so'rovlarga
 // public folder ochiqligini bildiradi
@@ -26,7 +36,7 @@ app.post("/create-item", (req, res) => {
     res.json({ test: "success"})
 });
 app.get('/author', (req, res) => {
-    res.render("author", );
+    res.render("author",  { user: user });
 })
 app.get("/", function (req ,res) {
     res.render('harid')
