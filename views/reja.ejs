@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/reja.css">
+ 
 </head>
 <body style="background-color: #b8bbd1">
     <div class="container">
@@ -16,7 +18,7 @@
                         <label for="exampleInputEmail1" class="form-label"></label>
                         <input 
                             id="create-field" 
-                            name="item"
+                            name="reja"
                             autofocus
                             autocomplete="off"
                             class="form-control mr-3"
@@ -28,6 +30,27 @@
             
         </form>
         </div>
+        
+        <ul id="item-list" class="list-group">
+            <% items.map(function(item) { %>
+                 <li
+                class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+            >
+                <span class="item-text"><%=item.reja%></span>
+                <div>
+                    <button 
+                        data-id="<%=item._id%>" 
+                        class="edit-me btn btn-secondary btn-sm mr-1">
+                        O'zgartirish
+                    </button>
+                    <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">
+                        O'chirish
+                    </button>
+                </div>
+            </li>
+            <% }) %>
+           
+        </ul>
         <button id="clean-all" class="btn btn-danger" style="border-radius: 20px;">
             Hamma Rejalarni O'chirish
         </button>
