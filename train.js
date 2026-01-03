@@ -1,31 +1,101 @@
+/////////////////////////MITASK-C ///////////////////////////////////
+// Shunday class tuzing tuzing nomi Shop, va uni constructoriga
+//  3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, 
+//  biri qoldiq, biri sotish va biri qabul. Har bir method ishga 
+//  tushgan vaqt ham log qilinsin.
+// MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return 
+// hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! 
+// shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() 
+// return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+
+
+///bu classda 3xil method bilan orqali 3 xil
+//  mahsulot ni qabul qilinganlar soni 
+// qoldiq soni va sotilgan mahsulotlar sonini  
+//aniqlash mumkin 
+class Shop{
+    static getTime(){
+        const now = new Date()
+        return now.toLocaleTimeString("en-GB");
+    }
+    constructor(non, cola, lagmon){
+        this.non = non;
+        this.cola = cola;
+        this.lagmon = lagmon;
+    }
+      qabul(item1, item2, item3){
+        console.log(`Soat ${Shop.getTime()} da`)
+        this.non += item1;
+        this.cola += item2;
+        this.lagmon += item3;
+       
+        console.log(`qabul qilindi, non ${item1}, cola ${item2}, lagmon ${item3}`)
+    }
+  
+      sotish(item1, item2, item3){
+        console.log(`Soat ${Shop.getTime()} da`)
+        if(this.non < item1 )
+            {
+                console.log(`sizda yetarli non yoq ${item1-this.non}ta yetamayapti`)
+       return
+        } 
+        if(this.cola < item2 )
+            {
+                console.log(`sizda yetarli non yoq ${item2-this.cola}ta yetamayapti`)
+       return
+        } 
+        if(this.lagmon < item3 )
+            {
+                console.log(`sizda yetarli non yoq ${item3-this.lagmon}ta yetamayapti`)
+       return
+        } 
+
+            this.non -= item1;
+            this.cola -= item2;
+            this.lagmon -= item3
+        console.log(`sotildi non ${item1}ta, cola ${item2}ta, lagmon ${item3}ta`)
+        }
+      qoldiq(){
+        console.log(`Soat ${Shop.getTime()} da`)
+        console.log(`Sizda ${this.non}non, ${this.cola}cola va ${this.lagmon}lagmon mavjud`)
+    }
+        
+    }
+  
+
+
+const myShop = new Shop(10,20,20);
+myShop.qoldiq()
+myShop.qabul(4,6,8)
+myShop.sotish(5,7,29)
+myShop.qoldiq()
+
+
+
+
+
+
+
+
 /////////// TASK B//////////
 //funksiya loop bilan har bir elementni tekshiradi
 // isNan va "" (bo'sh string) bo'lmaslik holati yani ikkala shart ham 
 //bir vaqtda qanaoatlantirilsa shundagina characterni raqam sifatida oladi 
 //va count qilib xisoblab to string qiymatning oxirgi characteriagcha shunday tekshirib chiqadi
-function countDigit ( data){
-    let count = 0 ;
-    for (let char  of data){
-        if (!isNaN(char) && char !== ""){
-            count++
-        }
-    }
-    return count
-}
-console.log(countDigit("sdev9077dv67676d7"));
+// function countDigit ( data){
+//     let count = 0 ;
+//     for (let char  of data){
+//         if (!isNaN(char) && char !== ""){
+//             count++
+//         }
+//     }
+//     return count
+// }
+// console.log(countDigit("sdev9077dv67676d7"));
 
 
-
-
-
-
-
-
-
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////////
 
 //console.log("JAck Ma maslahatlari");
 // const list = [
