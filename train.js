@@ -35,26 +35,39 @@ class Shop{
   
       sotish(item1, item2, item3){
         console.log(`Soat ${Shop.getTime()} da`)
-        if(this.non < item1 )
+        let msg = ""
+        if(this.non > item1 )
             {
-                console.log(`sizda yetarli non yoq ${item1-this.non}ta yetamayapti`)
-       return
-        } 
-        if(this.cola < item2 )
-            {
-                console.log(`sizda yetarli non yoq ${item2-this.cola}ta yetamayapti`)
-       return
-        } 
-        if(this.lagmon < item3 )
-            {
-                console.log(`sizda yetarli non yoq ${item3-this.lagmon}ta yetamayapti`)
-       return
-        } 
+                this.non -= item1;
+                msg += `non ${item1}ta sotildi`
+       
+        } else{
+            msg+= ` sizda yetarli non yoq ${item1-this.non}ta yetamayapti`
+           // this.non=0;
+        }
 
-            this.non -= item1;
-            this.cola -= item2;
-            this.lagmon -= item3
-        console.log(`sotildi non ${item1}ta, cola ${item2}ta, lagmon ${item3}ta`)
+
+        if(this.cola > item2 )
+            {
+                this.cola -= item2;
+                msg +=`cola ${item2}ta sotildi`
+       
+        } else{
+            msg += ` sizda yetarli cola yoq ${item2-this.cola}ta yetamayapti`
+            //this.cola=0
+        }
+
+
+        if(this.lagmon > item3 )
+            {
+                this.lagmon -= item3;
+                msg += `lagmon ${item3}ta sotildi`
+       
+        } else{
+            msg +=` sizda yetarli lagmon yoq ${item3-this.lagmon}ta yetamayapti`
+           // this.lagmon= 0;
+        }
+        console.log(msg)
         }
       qoldiq(){
         console.log(`Soat ${Shop.getTime()} da`)
@@ -68,8 +81,12 @@ class Shop{
 const myShop = new Shop(10,20,20);
 myShop.qoldiq()
 myShop.qabul(4,6,8)
+myShop.qoldiq()
+console.log("=================================")
 myShop.sotish(5,7,29)
 myShop.qoldiq()
+
+
 
 
 
