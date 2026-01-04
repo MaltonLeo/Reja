@@ -1,6 +1,6 @@
 
 
-///////////////////////MITTASK-C//////////////////////
+///////////////////////MITTASK-D//////////////////////
 // Shunday function tuzing, u 2ta string parametrga
 //  ega bolsin, hamda agar har ikkala string bir 
 //  hil harflardan iborat bolsa true aks holda false qaytarsin
