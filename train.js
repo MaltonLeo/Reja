@@ -1,3 +1,35 @@
+
+
+///////////////////////MITTASK-C//////////////////////
+// Shunday function tuzing, u 2ta string parametrga
+//  ega bolsin, hamda agar har ikkala string bir 
+//  hil harflardan iborat bolsa true aks holda false qaytarsin
+
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+function taskC(par1, par2) {
+    if( par1.length !== par2.length)
+        return false
+        
+     return par1.split("").sort().join("") ===
+            par2.split("").sort().join("")
+
+    
+        
+  
+}
+console.log(taskC("sadio", 'adios'))
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////MITASK-C ///////////////////////////////////
 // Shunday class tuzing tuzing nomi Shop, va uni constructoriga
 //  3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, 
@@ -8,90 +40,81 @@
 // shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() 
 // return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 
-
-
 ///bu classda 3xil method bilan orqali 3 xil
 //  mahsulot ni qabul qilinganlar soni 
 // qoldiq soni va sotilgan mahsulotlar sonini  
 //aniqlash mumkin 
-class Shop{
-    static getTime(){
-        const now = new Date()
-        return now.toLocaleTimeString("en-GB");
-    }
-    constructor(non, cola, lagmon){
-        this.non = non;
-        this.cola = cola;
-        this.lagmon = lagmon;
-    }
-      qabul(item1, item2, item3){
-        console.log(`Soat ${Shop.getTime()} da`)
-        this.non += item1;
-        this.cola += item2;
-        this.lagmon += item3;
+// class Shop{
+//     static getTime(){
+//         const now = new Date()
+//         return now.toLocaleTimeString("en-GB");
+//     }
+//     constructor(non, cola, lagmon){
+//         this.non = non;
+//         this.cola = cola;
+//         this.lagmon = lagmon;
+//     }
+//       qabul(item1, item2, item3){
+//         console.log(`Soat ${Shop.getTime()} da`)
+//         this.non += item1;
+//         this.cola += item2;
+//         this.lagmon += item3;
        
-        console.log(`qabul qilindi, non ${item1}, cola ${item2}, lagmon ${item3}`)
-    }
+//         console.log(`qabul qilindi, non ${item1}, cola ${item2}, lagmon ${item3}`)
+//     }
   
-      sotish(item1, item2, item3){
-        console.log(`Soat ${Shop.getTime()} da`)
-        let msg = ""
-        if(this.non > item1 )
-            {
-                this.non -= item1;
-                msg += `non ${item1}ta sotildi`
+//       sotish(item1, item2, item3){
+//         console.log(`Soat ${Shop.getTime()} da`)
+//         let msg = ""
+//         if(this.non > item1 )
+//             {
+//                 this.non -= item1;
+//                 msg += `non ${item1}ta sotildi`
        
-        } else{
-            msg+= ` sizda yetarli non yoq ${item1-this.non}ta yetamayapti`
-           // this.non=0;
-        }
+//         } else{
+//             msg+= ` sizda yetarli non yoq ${item1-this.non}ta yetamayapti`
+//            // this.non=0;
+//         }
 
 
-        if(this.cola > item2 )
-            {
-                this.cola -= item2;
-                msg +=`cola ${item2}ta sotildi`
+//         if(this.cola > item2 )
+//             {
+//                 this.cola -= item2;
+//                 msg +=`cola ${item2}ta sotildi`
        
-        } else{
-            msg += ` sizda yetarli cola yoq ${item2-this.cola}ta yetamayapti`
-            //this.cola=0
-        }
+//         } else{
+//             msg += ` sizda yetarli cola yoq ${item2-this.cola}ta yetamayapti`
+//             //this.cola=0
+//         }
 
 
-        if(this.lagmon > item3 )
-            {
-                this.lagmon -= item3;
-                msg += `lagmon ${item3}ta sotildi`
+//         if(this.lagmon > item3 )
+//             {
+//                 this.lagmon -= item3;
+//                 msg += `lagmon ${item3}ta sotildi`
        
-        } else{
-            msg +=` sizda yetarli lagmon yoq ${item3-this.lagmon}ta yetamayapti`
-           // this.lagmon= 0;
-        }
-        console.log(msg)
-        }
-      qoldiq(){
-        console.log(`Soat ${Shop.getTime()} da`)
-        console.log(`Sizda ${this.non}non, ${this.cola}cola va ${this.lagmon}lagmon mavjud`)
-    }
+//         } else{
+//             msg +=` sizda yetarli lagmon yoq ${item3-this.lagmon}ta yetamayapti`
+//            // this.lagmon= 0;
+//         }
+//         console.log(msg)
+//         }
+//       qoldiq(){
+//         console.log(`Soat ${Shop.getTime()} da`)
+//         console.log(`Sizda ${this.non}non, ${this.cola}cola va ${this.lagmon}lagmon mavjud`)
+//     }
         
-    }
+//     }
   
 
 
-const myShop = new Shop(10,20,20);
-myShop.qoldiq()
-myShop.qabul(4,6,8)
-myShop.qoldiq()
-console.log("=================================")
-myShop.sotish(5,7,29)
-myShop.qoldiq()
-
-
-
-
-
-
-
+// const myShop = new Shop(10,20,20);
+// myShop.qoldiq()
+// myShop.qabul(4,6,8)
+// myShop.qoldiq()
+// console.log("=================================")
+// myShop.sotish(5,7,29)
+// myShop.qoldiq()
 
 
 
