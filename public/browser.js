@@ -49,6 +49,8 @@ document.addEventListener("click", function (e) {
             .then((response) => {
                 console.log(response.data);
                 e.target.parentElement.parentElement.remove();
+                createField.value=""
+                 createField.focus();
             })
             .catch((err) => {
                 console.log("Iltimos qaytadan harakat qiling")
@@ -69,6 +71,8 @@ document.addEventListener("click", function (e) {
                 e.target.parentElement.parentElement.querySelector(
                     ".item-text"
                 ).innerHTML= userInput
+                createField.value=""
+                 createField.focus();
             })
             .catch((err) => {
                 console.log("Iltimos qaytadan harakat qiling")

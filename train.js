@@ -1,4 +1,15 @@
+// TASK E: 
+// Shunday function tuzing, u bitta string 
+// argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
 
+const getReverse = (a) =>  {
+ 
+    const b = a.split('').reverse().join('');
+    console.log(b)
+    return b
+}
+getReverse("slash")
 
 ///////////////////////MITTASK-D//////////////////////
 // Shunday function tuzing, u 2ta string parametrga
@@ -7,25 +18,18 @@
 
 // MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
-function taskC(par1, par2) {
-    if( par1.length !== par2.length)
-        return false
+// function taskC(par1, par2) {
+//     if( par1.length !== par2.length)
+//         return false
         
-     return par1.split("").sort().join("") ===
-            par2.split("").sort().join("")
+//      return par1.split("").sort().join("") ===
+//             par2.split("").sort().join("")
 
     
         
   
-}
-console.log(taskC("sadio", 'adios'))
-
-
-
-
-
-
-
+// }
+// console.log(taskC("sadio", 'adios'))
 
 
 
