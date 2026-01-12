@@ -23,11 +23,11 @@ const getHighestIndex = (par) =>{
         eng = par[i]/// eng katta qiymatni topsa shuni eng qiymatga tenglaydi
     }  i++/// cheksiz loop bo'lib qolmasligi uchun i++ yozildi
     } 
-       return eng// eng katta deb topilgan qiymatni return qiladi
+       return par.indexOf(eng)// eng katta deb topilgan qiymatni return qiladi
     } 
         
 
-console.log(getHighestIndex( [4,56,2,79,81]))
+console.log(getHighestIndex( [104,56,100,79,81]))
 
 
 
