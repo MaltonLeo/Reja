@@ -1,16 +1,100 @@
+// ///////////////TASK G: ///////////////////////////////////
+
+// Yagona parametrga ega function tuzing.
+// Va bu function parametr orqalik integer 
+// ma'lumot turlariga ega bo'lgan bir arrayni 
+// qabul qilsin.
+// Ushbu function bizga arrayning tarkibidagi 
+// birinchi eng katta qiymatning indeksini qaytarsin.
+
+// MASALAN: getHighestIndex([5, 21, 12, 21 ,8]); return qiladi 1 sonini
+// Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
+// Va bu 21 soni arrayning tarkibidagi birinchi eng katta 
+// son hisobladi va bizga uning indeksi 1 qaytadi.
+
+// const getHighestIndex = (par) =>{
+//     if(!Array.isArray(par) || par.length ===0){
+//         return undefined
+//     }
+//     let eng = par[0];
+//     for(const num of par) {
+//         if(num> eng){
+//             eng = num;
+//         }
+//     } return eng
+// };
+// console.log(getHighestIndex( [4,56,2,78,21]))
+///// while loop
+// const getHighestIndex = (par) => {
+//     if(!Array.isArray(par) || par.length === 0){
+//         return undefined
+//     }
+//         let eng = par[0]
+//         let i= 1
+//         while( i < par.length){
+//             if(par[i]> eng){
+//                 eng = par[i]
+//             } i++
+//         } return eng 
+// }
+// console.log(getHighestIndex( [4,56,2,79,21]))
+
+/////do while
+const getHighestIndex = (par) => {
+  if(!Array.isArray(par) || par.length ===0){
+    return undefined
+  }
+  let eng = par[0];
+  let i = 0;
+  if(par.length>1) {
+    do{
+      if(par[i]> eng){
+        eng = par[i]
+      }
+      i++
+    } while(i< par.length)
+  }
+  return eng 
+}
+console.log(getHighestIndex( [4,56,2,99,21]))
+
+/////////TASK-F///////////////////// 
+//Yagona string argumentga ega 
+// findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir 
+// xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+// MASALAN: findDoublers("hello"); natija
+//  true qaytadi. Sababi ikki marotaba takrorlangan
+//   'll' harfi mavjud!
+
+// function findDoublers (str) {
+
+//   return new Set(str).size !== str.length;
+// }
+
+// console.log(findDoublers("hello"));
+//bu yerda Set bir marta ishlatilgan 
+//qiymatlarni saqlaydi ya'ni bir marta 
+//ishlatilgan harfni oladi/
+//agar ikki marotaba ishlatilgan harf bo'lsa /
+//Set(str).size ning qiymati so'zning haqiqiy uzunligidan 
+//kichkina bo'ladi 
+
 
 // TASK E: 
 // Shunday function tuzing, u bitta string 
 // argumentni qabul qilib osha stringni teskari qilib return qilsin.
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
-const getReverse = (a) =>  {
+// const getReverse = (a) =>  {
  
-    const b = a.split('').reverse().join('');
-    console.log(b)
-    return b
-}
-getReverse("slash")
+//     const b = a.split('').reverse().join('');
+//     console.log(b)
+//     return b
+// }
+// getReverse("slash")
 
 ///////////////////////MITTASK-D//////////////////////
 // Shunday function tuzing, u 2ta string parametrga

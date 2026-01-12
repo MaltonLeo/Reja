@@ -1,3 +1,36 @@
+// ///////////////TASK G: ///////////////////////////////////
+
+// Yagona parametrga ega function tuzing.
+// Va bu function parametr orqalik integer 
+// ma'lumot turlariga ega bo'lgan bir arrayni 
+// qabul qilsin.
+// Ushbu function bizga arrayning tarkibidagi 
+// birinchi eng katta qiymatning indeksini qaytarsin.
+
+// MASALAN: getHighestIndex([5, 21, 12, 21 ,8]); return qiladi 1 sonini
+// Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
+// Va bu 21 soni arrayning tarkibidagi birinchi eng katta 
+// son hisobladi va bizga uning indeksi 1 qaytadi.
+
+const getHighestIndex = (par) =>{
+    if(!Array.isArray(par) || par.length ===0){ ///paramaetrni arrayligi va bo'sh emasligini tekshiradi
+        return undefined
+    }
+    let eng = par[0];///eng qiymatni nolinchiindexdagi son bilan solishtiradi
+    let i =1; // keyingi qadamni 1 chi indeksdan davom ettiradi
+  while(i< par.length){ /// arrayni barcha elementlarini tekshirguncha loop bilan tekshiradi
+    if(par[i] > eng){// eng katta qiymatni topish uchun birma bir element bilan solishtiradi
+        eng = par[i]/// eng katta qiymatni topsa shuni eng qiymatga tenglaydi
+    }  i++/// cheksiz loop bo'lib qolmasligi uchun i++ yozildi
+    } 
+       return eng// eng katta deb topilgan qiymatni return qiladi
+    } 
+        
+
+console.log(getHighestIndex( [4,56,2,79,81]))
+
+
+
 /////////TASK-F///////////////////// 
 //Yagona string argumentga ega 
 // findDoublers nomli function tuzing
@@ -9,12 +42,12 @@
 //  true qaytadi. Sababi ikki marotaba takrorlangan
 //   'll' harfi mavjud!
 
-function findDoublers (str) {
+// function findDoublers (str) {
 
-  return new Set(str).size !== str.length;
-}
+//   return new Set(str).size !== str.length;
+// }
 
-console.log(findDoublers("hello"));
+// console.log(findDoublers("hello"));
 //bu yerda Set bir marta ishlatilgan 
 //qiymatlarni saqlaydi ya'ni bir marta 
 //ishlatilgan harfni oladi/
